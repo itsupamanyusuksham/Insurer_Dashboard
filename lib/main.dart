@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:insurer_dashboard/screens/insurer_portal_screen.dart';
+import 'package:insurer_dashboard/screens/insurer_login_screen.dart';
 
 void main() {
   runApp(const InsurerDashboardApp());
@@ -19,7 +19,7 @@ class InsurerDashboardApp extends StatelessWidget {
         useMaterial3: true,
         textTheme: GoogleFonts.interTextTheme(),
       ),
-      home: const InsurerPortalScreen(),
+      home: const InsurerLoginScreen(),
     );
   }
 }

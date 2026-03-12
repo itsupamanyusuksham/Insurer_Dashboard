@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:file_picker/file_picker.dart';
+import 'insurer_login_screen.dart';
 
 class InsurerPortalScreen extends StatefulWidget {
   const InsurerPortalScreen({super.key});
@@ -37,10 +38,39 @@ class _InsurerPortalScreenState extends State<InsurerPortalScreen> {
     });
   }
 
+  void _handleLogout() {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const InsurerLoginScreen(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF3F4F6),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 16.0),
+            child: TextButton.icon(
+              onPressed: _handleLogout,
+              icon: const Icon(Icons.logout, color: Color(0xFFED1C24)),
+              label: const Text(
+                'Logout',
+                style: TextStyle(
+                  color: Color(0xFFED1C24),
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
       body: Center(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(24.0),
@@ -71,7 +101,7 @@ class _InsurerPortalScreenState extends State<InsurerPortalScreen> {
               Container(
                 width: 500,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF1D4ED8), // Deep blue
+                  color: const Color(0xFF0451B5), // Deep blue
                   borderRadius: BorderRadius.circular(32),
                   boxShadow: [
                     BoxShadow(
